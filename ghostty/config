@@ -28,6 +28,7 @@ window-inherit-font-size = true
 macos-titlebar-style = hidden
 macos-auto-secure-input = true
 macos-secure-input-indication = false
+macos-option-as-alt = true
 
 #Miscellaneous
 mouse-hide-while-typing = true
