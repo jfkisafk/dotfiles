@@ -1,0 +1,7 @@
+--target=~/.config
+--ignore=.stowrc
+--ignore=.DS_Store
+--ignore=.gitignore
+--ignore=.git
+--ignore=readme.md
+--ignore=license.md
