@@ -6,7 +6,8 @@ return {
 
     sup.setup({
       color = {
-        suggestion_color = palette.pine,
+        suggestion_color = palette.muted,
+        cterm = 244,
       },
     })
   end,
