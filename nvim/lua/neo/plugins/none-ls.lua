@@ -17,7 +17,6 @@ return {
 				null_ls.builtins.diagnostics.pylint,
 				null_ls.builtins.diagnostics.revive,
 				null_ls.builtins.diagnostics.selene,
-				null_ls.builtins.diagnostics.spectral,
 				null_ls.builtins.diagnostics.staticcheck,
 				null_ls.builtins.diagnostics.stylelint,
 				null_ls.builtins.diagnostics.tfsec,

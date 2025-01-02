@@ -87,7 +87,6 @@ return {
 				"pylint",
 				"revive",
 				"selene",
-				"spectral",
 				"staticcheck",
 				"stylelint",
 				"tfsec",
