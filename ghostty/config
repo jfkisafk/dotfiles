@@ -26,7 +26,7 @@ cursor-style-blink = true
 # Window configuration
 window-padding-x = 7
 window-padding-y = 7
-window-padding-color = extend-always
+window-padding-color = extend
 window-padding-balance = true
 window-vsync = true
 window-inherit-working-directory = true
@@ -34,9 +34,11 @@ window-inherit-font-size = true
 
 # MacOS configuration
 macos-titlebar-style = hidden
-macos-auto-secure-input = true
 macos-secure-input-indication = false
 macos-option-as-alt = true
+macos-icon = custom-style
+macos-icon-ghost-color = #c4a7e7
+macos-icon-screen-color = #191724
 
 #Miscellaneous
 mouse-hide-while-typing = true
