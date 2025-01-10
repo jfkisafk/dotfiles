@@ -7,25 +7,59 @@
       "complex_modifications": {
         "rules": [
           {
-            "description": "Hyper Key (⌃⌥⇧⌘)",
+            "description": "Caps Lock Modifications",
             "manipulators": [
               {
-                "description": "Caps Lock -> Hyper Key",
+                "description": "Caps Lock -> Left Ctrl",
                 "from": {
                   "key_code": "caps_lock",
                   "modifiers": {
-                    "optional": ["any"]
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
                   {
-                    "key_code": "left_shift",
-                    "modifiers": ["left_command", "left_control", "left_option"]
+                    "key_code": "left_control"
                   }
                 ],
                 "to_if_alone": [
                   {
                     "key_code": "escape"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Hyper Key (⌃⌥⇧⌘)",
+            "manipulators": [
+              {
+                "description": "Tab -> Hyper Key",
+                "from": {
+                  "key_code": "tab",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "left_shift",
+                    "modifiers": [
+                      "left_control",
+                      "left_option",
+                      "left_shift",
+                      "left_command"
+                    ]
+                  }
+                ],
+                "to_if_alone": [
+                  {
+                    "key_code": "tab"
                   }
                 ],
                 "type": "basic"
@@ -46,13 +80,17 @@
                 "from": {
                   "key_code": "h",
                   "modifiers": {
-                    "mandatory": ["command"]
+                    "mandatory": [
+                      "command"
+                    ]
                   }
                 },
                 "to": [
                   {
                     "key_code": "left_arrow",
-                    "modifiers": ["command"]
+                    "modifiers": [
+                      "command"
+                    ]
                   }
                 ],
                 "type": "basic"
@@ -68,13 +106,17 @@
                 "from": {
                   "key_code": "l",
                   "modifiers": {
-                    "mandatory": ["command"]
+                    "mandatory": [
+                      "command"
+                    ]
                   }
                 },
                 "to": [
                   {
                     "key_code": "right_arrow",
-                    "modifiers": ["command"]
+                    "modifiers": [
+                      "command"
+                    ]
                   }
                 ],
                 "type": "basic"
@@ -83,7 +125,9 @@
                 "from": {
                   "key_code": "tab",
                   "modifiers": {
-                    "mandatory": ["command"]
+                    "mandatory": [
+                      "command"
+                    ]
                   }
                 },
                 "to": [
@@ -95,7 +139,9 @@
                   },
                   {
                     "key_code": "tab",
-                    "modifiers": ["command"]
+                    "modifiers": [
+                      "command"
+                    ]
                   }
                 ],
                 "type": "basic"
@@ -127,8 +173,12 @@
                 "from": {
                   "key_code": "h",
                   "modifiers": {
-                    "mandatory": ["right_command"],
-                    "optional": ["any"]
+                    "mandatory": [
+                      "right_command"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
@@ -142,8 +192,12 @@
                 "from": {
                   "key_code": "j",
                   "modifiers": {
-                    "mandatory": ["right_command"],
-                    "optional": ["any"]
+                    "mandatory": [
+                      "right_command"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
@@ -157,8 +211,12 @@
                 "from": {
                   "key_code": "k",
                   "modifiers": {
-                    "mandatory": ["right_command"],
-                    "optional": ["any"]
+                    "mandatory": [
+                      "right_command"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
@@ -172,8 +230,12 @@
                 "from": {
                   "key_code": "l",
                   "modifiers": {
-                    "mandatory": ["right_command"],
-                    "optional": ["any"]
+                    "mandatory": [
+                      "right_command"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
