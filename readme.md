@@ -18,6 +18,10 @@ development enbvironment.
 
 The [Ghostty](https://ghostty.org) configuration is managed in the same way, becuase nix does not provide a way to manage the ghostty configuration.
 
+### Karabiner configuration
+
+The [Karabiner](https://karabiner-elements.pqrs.org) configuration is managed in the same way, becuase nix does not provide a way to manage the karabiner configuration.
+
 ## Requirements
 
 Make sure you have `stow` installed.
