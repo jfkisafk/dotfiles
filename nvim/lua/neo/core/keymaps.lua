@@ -29,3 +29,12 @@ keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) 
 keymap.set("n", "<C-m>", "<cmd>tabn<CR>", { desc = "Go to next tab" })                          --  go to next tab
 keymap.set("n", "<C-n>", "<cmd>tabp<CR>", { desc = "Go to previous tab" })                      --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+
+-- vertical movements
+keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down half a page" })
+keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up half a page" })
+keymap.set("n", "n", "nzzzv", { desc = "Next search result" })
+keymap.set("n", "N", "Nzzzv", { desc = "Previous search result" })
+
+-- don't lose clipboard in register
+keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste without losing clipboard" })
