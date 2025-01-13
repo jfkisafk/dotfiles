@@ -16,6 +16,7 @@ return {
 
 		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
+		local navic = require("nvim-navic")
 
 		local keymap = vim.keymap -- for conciseness
 
@@ -68,6 +69,12 @@ return {
 			end,
 		})
 
+		local on_attach = function(client, bufnr)
+			if client.server_capabilities.documentSymbolProvider then
+				navic.attach(client, bufnr)
+			end
+		end
+
 		-- used to enable autocompletion (assign to every lsp server config)
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
@@ -83,18 +90,21 @@ return {
 			function(server_name)
 				lspconfig[server_name].setup({
 					capabilities = capabilities,
+					on_attach = on_attach,
 				})
 			end,
 			["graphql"] = function()
 				-- configure graphql language server
 				lspconfig["graphql"].setup({
 					capabilities = capabilities,
+					on_attach = on_attach,
 					filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
 				})
 			end,
 			["rust_analyzer"] = function()
 				lspconfig["rust_analyzer"].setup({
 					capabilities = capabilities,
+					on_attach = on_attach,
 					filetypes = { "rust" },
 					root_dir = util.root_pattern("Cargo.toml"),
 					settings = {
@@ -110,6 +120,7 @@ return {
 				-- configure gopls language server
 				lspconfig["gopls"].setup({
 					capabilities = capabilities,
+					on_attach = on_attach,
 					filetypes = { "go", "gomod", "gowork", "gotmpl" },
 					root_dir = util.root_pattern("go.mod", ".git", "go.work"),
 					settings = {
@@ -135,6 +146,7 @@ return {
 				-- configure lua server (with special settings)
 				lspconfig["lua_ls"].setup({
 					capabilities = capabilities,
+					on_attach = on_attach,
 					settings = {
 						Lua = {
 							completion = {
