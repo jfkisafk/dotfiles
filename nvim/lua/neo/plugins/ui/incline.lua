@@ -5,7 +5,6 @@ return {
 		"SmiteshP/nvim-navic",
 	},
 	config = function()
-		local helpers = require("incline.helpers")
 		local navic = require("nvim-navic")
 		local devicons = require("nvim-web-devicons")
 
@@ -22,8 +21,7 @@ return {
 				local ft_icon, ft_color = devicons.get_icon_color(filename)
 				local modified = vim.bo[props.buf].modified
 				local res = {
-					ft_icon and { " ", ft_icon, " ", guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or "",
-					" ",
+					ft_icon and { " ", ft_icon, " ", guifg = ft_color } or nil,
 					{ filename, gui = modified and "bold,italic" or "bold" },
 				}
 				if props.focused then
