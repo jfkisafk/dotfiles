@@ -128,6 +128,14 @@ return {
 					settings = require("neo.plugins.code.settings.lua"),
 				})
 			end,
+			["pylyzer"] = function()
+				-- configure pylyzer language server
+				lspconfig["pylyzer"].setup({
+					capabilities = capabilities,
+					on_attach = navic_on_attach,
+					filetypes = { "python" },
+				})
+			end,
 		})
 	end,
 }
