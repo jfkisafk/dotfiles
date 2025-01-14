@@ -69,7 +69,7 @@ return {
 			end,
 		})
 
-		local on_attach = function(client, bufnr)
+		local navic_on_attach = function(client, bufnr)
 			if client.server_capabilities.documentSymbolProvider then
 				navic.attach(client, bufnr)
 			end
@@ -90,27 +90,103 @@ return {
 			function(server_name)
 				lspconfig[server_name].setup({
 					capabilities = capabilities,
-					on_attach = on_attach,
+					on_attach = navic_on_attach,
 				})
 			end,
 			["graphql"] = function()
 				-- configure graphql language server
 				lspconfig["graphql"].setup({
 					capabilities = capabilities,
-					on_attach = on_attach,
+					on_attach = navic_on_attach,
 					filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
 				})
 			end,
 			["rust_analyzer"] = function()
 				lspconfig["rust_analyzer"].setup({
 					capabilities = capabilities,
-					on_attach = on_attach,
+					on_attach = navic_on_attach,
 					filetypes = { "rust" },
 					root_dir = util.root_pattern("Cargo.toml"),
 					settings = {
+						-- configure rust-analyzer language server
 						["rust-analyzer"] = {
+							assist = {
+								importGranularity = "crate",
+								importEnforceGranularity = true,
+							},
 							cargo = {
-								allFeatures = true,
+								features = "all",
+							},
+							checkOnSave = true,
+							check = {
+								command = "clippy",
+								features = "all",
+								allTargets = true,
+							},
+							completion = {
+								autoself = { enable = true },
+								autoimport = { enable = true },
+								postfix = { enable = true },
+							},
+							diagnostics = {
+								enable = true,
+								enableExperimental = true,
+							},
+							hover = {
+								actions = {
+									enable = true,
+									run = { enable = true },
+									debug = { enable = true },
+									gotoTypeDef = { enable = true },
+									implementations = { enable = true },
+									references = { enable = true },
+								},
+								links = { enable = true },
+								documentation = { enable = true },
+							},
+							imports = {
+								group = { enable = true },
+								merge = { glob = false },
+								prefix = "self",
+								preferPrelude = true,
+								granularity = {
+									enforce = true,
+									group = "crate",
+								},
+							},
+							inlayHints = {
+								enable = true,
+								bindingModeHints = { enable = true },
+								chainingHints = { enable = true },
+								closingBraceHints = {
+									enable = true,
+									minLines = 0,
+								},
+								closureCaptureHints = { enbale = true },
+								closureReturnTypeHints = { enable = "always" },
+								lifetimeElisionHints = {
+									enable = "skip_trivial",
+									useParameterNames = true,
+								},
+								typeHints = { enable = true },
+								implicitDrops = { enable = true },
+							},
+							interpret = { tests = true },
+							lens = {
+								enable = true,
+								run = { enable = true },
+								debug = { enable = true },
+								implementations = { enable = true },
+								references = {
+									adt = { enable = true },
+									enumVariant = { enable = true },
+									method = { enable = true },
+									trait = { enable = true },
+								},
+							},
+							procMacro = {
+								enable = true,
+								attributes = { enable = true },
 							},
 						},
 					},
@@ -120,7 +196,7 @@ return {
 				-- configure gopls language server
 				lspconfig["gopls"].setup({
 					capabilities = capabilities,
-					on_attach = on_attach,
+					on_attach = navic_on_attach,
 					filetypes = { "go", "gomod", "gowork", "gotmpl" },
 					root_dir = util.root_pattern("go.mod", ".git", "go.work"),
 					settings = {
@@ -146,7 +222,7 @@ return {
 				-- configure lua server (with special settings)
 				lspconfig["lua_ls"].setup({
 					capabilities = capabilities,
-					on_attach = on_attach,
+					on_attach = navic_on_attach,
 					settings = {
 						Lua = {
 							completion = {
