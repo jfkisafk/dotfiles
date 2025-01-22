@@ -46,6 +46,7 @@ return {
 				"lua_ls",
 				"marksman",
 				"nil_ls",
+				"prismals",
 				"pylyzer",
 				"rnix",
 				"rust_analyzer",

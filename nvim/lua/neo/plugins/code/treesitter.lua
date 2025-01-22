@@ -57,6 +57,7 @@ return {
         "markdown_inline",
         "nix",
         "nu",
+        "prisma",
         "proto",
         "python",
         "regex",
