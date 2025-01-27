@@ -30,7 +30,7 @@ return {
 				width = 35,
 				mappings = {
 					["<Space>"] = false,
-					["t"] = "open",
+					["o"] = "open",
 					["<cr>"] = "open_tabnew",
 					["[b"] = "prev_source",
 					["]b"] = "next_source",
