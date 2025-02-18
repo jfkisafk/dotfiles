@@ -29,6 +29,7 @@ return {
       ensure_installed = {
         "astro",
         "bashls",
+        "csharp_ls",
         "cssls",
         "docker_compose_language_service",
         "dockerls",
@@ -45,7 +46,6 @@ return {
         "lua_ls",
         "marksman",
         "nil_ls",
-        "omnisharp",
         "prismals",
         "pylyzer",
         "rnix",
