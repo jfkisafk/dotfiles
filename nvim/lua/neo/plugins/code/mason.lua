@@ -1,100 +1,102 @@
 return {
-  "williamboman/mason.nvim",
-  dependencies = {
-    "williamboman/mason-lspconfig.nvim",
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-  },
-  config = function()
-    -- import mason
-    local mason = require("mason")
+	"williamboman/mason.nvim",
+	dependencies = {
+		"williamboman/mason-lspconfig.nvim",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+	},
+	config = function()
+		-- import mason
+		local mason = require("mason")
 
-    -- import mason-lspconfig
-    local mason_lspconfig = require("mason-lspconfig")
+		-- import mason-lspconfig
+		local mason_lspconfig = require("mason-lspconfig")
 
-    local mason_tool_installer = require("mason-tool-installer")
+		local mason_tool_installer = require("mason-tool-installer")
 
-    -- enable mason and configure icons
-    mason.setup({
-      ui = {
-        icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗",
-        },
-      },
-    })
+		-- enable mason and configure icons
+		mason.setup({
+			ui = {
+				icons = {
+					package_installed = "✓",
+					package_pending = "➜",
+					package_uninstalled = "✗",
+				},
+			},
+		})
 
-    mason_lspconfig.setup({
-      -- list of servers for mason to install
-      ensure_installed = {
-        "astro",
-        "bashls",
-        "csharp_ls",
-        "cssls",
-        "docker_compose_language_service",
-        "dockerls",
-        "gopls",
-        "gradle_ls",
-        "graphql",
-        "html",
-        "jdtls",
-        "lwc_ls",
-        "jqls",
-        "jsonls",
-        "kotlin_language_server",
-        "lemminx",
-        "lua_ls",
-        "marksman",
-        "nil_ls",
-        "prismals",
-        "pylyzer",
-        "rnix",
-        "rust_analyzer",
-        "smithy_ls",
-        "sqlls",
-        "svelte",
-        "tailwindcss",
-        "terraformls",
-        "ts_ls",
-        "yamlls",
-        "zls",
-      },
-    })
+		mason_lspconfig.setup({
+			-- list of servers for mason to install
+			ensure_installed = {
+				"astro",
+				"bashls",
+				"csharp_ls",
+				"cssls",
+				"docker_compose_language_service",
+				"dockerls",
+				"gopls",
+				"gradle_ls",
+				"graphql",
+				"html",
+				"jdtls",
+				"lwc_ls",
+				"jqls",
+				"jsonls",
+				"kotlin_language_server",
+				"lemminx",
+				"lua_ls",
+				"marksman",
+				"nil_ls",
+				"prismals",
+				"pylyzer",
+				"rnix",
+				"rust_analyzer",
+				"smithy_ls",
+				"sqlls",
+				"svelte",
+				"tailwindcss",
+				"terraformls",
+				"ts_ls",
+				"yamlls",
+				"zls",
+			},
+		})
 
-    mason_tool_installer.setup({
-      ensure_installed = {
-        "biome",
-        "black",
-        "csharpier",
-        "gofumpt",
-        "goimports-reviser",
-        "golines",
-        "google-java-format",
-        "isort",
-        "ktlint",
-        "markdownlint",
-        "mdformat",
-        "prettier",
-        "pyink",
-        "rustywind",
-        "spectral",
-        "stylua",
-        "yamlfmt",
+		mason_tool_installer.setup({
+			ensure_installed = {
+				"biome",
+				"black",
+				"csharpier",
+				"gofumpt",
+				"goimports-reviser",
+				"golines",
+				"google-java-format",
+				"isort",
+				"ktlint",
+				"markdownlint",
+				"mdformat",
+				"prettier",
+				"pyink",
+				"rustywind",
+				"spectral",
+				"stylua",
+				"yamlfmt",
 
-        "gitlint",
-        "hadolint",
-        "ktlint",
-        "markdownlint",
-        "mypy",
-        "pylint",
-        "revive",
-        "staticcheck",
-        "stylelint",
-        "tfsec",
-        "yamllint",
-        "prettier",
-        "stylua",
-      },
-    })
-  end,
+				"gitlint",
+				"hadolint",
+				"ktlint",
+				"markdownlint",
+				"mypy",
+				"pylint",
+				"revive",
+				"staticcheck",
+				"stylelint",
+				"tfsec",
+				"yamllint",
+				"prettier",
+				"stylua",
+
+				"netcoredbg",
+			},
+		})
+	end,
 }
