@@ -30,7 +30,7 @@ return {
 
         -- set keybinds
         opts.desc = "Show LSP references"
-        keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+        keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
         opts.desc = "Show LSP references for method"
         keymap.set("n", "gy", "f(b<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
