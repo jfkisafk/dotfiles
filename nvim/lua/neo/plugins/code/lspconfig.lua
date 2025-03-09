@@ -153,6 +153,22 @@ return {
           },
         })
       end,
+      ["vtsls"] = function()
+        -- configure pylyzer language server
+        lspconfig["vtsls"].setup({
+          capabilities = capabilities,
+          filetypes = {
+            "typescript",
+            "typescriptreact",
+            "javascript",
+            "javascriptreact",
+            "typescript.tsx",
+            "javascript.jsx",
+          },
+          root_dir = util.root_pattern("tsconfig.json", "package.json", "jsconfig.json", ".git"),
+          settings = require("neo.plugins.code.settings.vtsls"),
+        })
+      end,
     })
   end,
 }

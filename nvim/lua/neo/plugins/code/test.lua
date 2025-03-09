@@ -3,11 +3,17 @@ return {
   dependencies = {
     "Issafalcon/neotest-dotnet",
     "nvim-neotest/nvim-nio",
+    "nvim-neotest/neotest-jest",
   },
   config = function()
     require("neotest").setup({
       adapters = {
         require("neotest-dotnet"),
+        require("neotest-jest"),
+      },
+      output = {
+        enabled = false,
+        open_on_run = false,
       },
     })
   end,
