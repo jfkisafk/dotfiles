@@ -15,6 +15,7 @@ return {
 
     -- enable mason and configure icons
     mason.setup({
+      PATH = "prepend",
       ui = {
         icons = {
           package_installed = "✓",
@@ -29,7 +30,7 @@ return {
       ensure_installed = {
         "astro",
         "bashls",
-        "csharp_ls",
+        "csharp_ls@0.16",
         "cssls",
         "docker_compose_language_service",
         "dockerls",
@@ -45,10 +46,9 @@ return {
         "lemminx",
         "lua_ls",
         "marksman",
-        "nil_ls",
         "prismals",
         "pylyzer",
-        "rnix",
+        "roslyn",
         "rust_analyzer",
         "smithy_ls",
         "sqlls",
