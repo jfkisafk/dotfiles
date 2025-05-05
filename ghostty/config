@@ -9,9 +9,9 @@ click-repeat-interval = 500
 command = /run/current-system/sw/bin/nu
 
 # Set font with ligatures
-font-family = GeistMono Nerd Font
-font-family-bold = GeistMono Nerd Font Bold
-font-size = 13
+font-family = ZedMono Nerd Font
+font-family-bold = ZedMono Nerd Font Bold
+font-size = 14
 font-feature = liga
 font-feature = calt
 font-feature = dlig
