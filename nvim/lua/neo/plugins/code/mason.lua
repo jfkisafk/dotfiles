@@ -48,7 +48,6 @@ return {
         "marksman",
         "prismals",
         "pylyzer",
-        "roslyn",
         "rust_analyzer",
         "smithy_ls",
         "sqlls",
