@@ -54,7 +54,6 @@ return {
         "svelte",
         "tailwindcss",
         "terraformls",
-        "ts_ls",
         "vtsls",
         "yamlls",
         "zls",
