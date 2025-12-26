@@ -8,16 +8,16 @@ click-repeat-interval = 500
 # Enable nushell integration
 command = /run/current-system/sw/bin/nu
 
-# Set font with ligatures
-font-family = GeistMono Nerd Font
-font-family-bold = GeistMono Nerd Font Bold
-font-size = 13
+# Set font with ligatures (==, !=, >=)
+font-family = Lilex Nerd Font
+# font-family-bold = GeistMono Nerd Font Bold
+font-size = 12.5
 font-feature = liga
 font-feature = calt
 font-feature = dlig
 
 # Cursor configuration
-cursor-style = block
+cursor-style = underline
 cursor-style-blink = true
 
 # Custom shader
@@ -39,13 +39,13 @@ minimum-contrast = 1.5
 macos-titlebar-style = hidden
 macos-secure-input-indication = false
 macos-option-as-alt = true
-macos-icon = custom-style
-macos-icon-ghost-color = #c4a7e7
-macos-icon-screen-color = #191724
+macos-icon = xray
+# macos-icon-ghost-color = #c4a7e7
+# macos-icon-screen-color = #191724
 
-#Miscellaneous
+# Miscellaneous
 mouse-hide-while-typing = true
 link-url = true
+link-previews = true
 scrollback-limit = 1000000
 theme = light:rose-pine-dawn,dark:Lavandula
-quit-after-last-window-closed = true
