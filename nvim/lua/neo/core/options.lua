@@ -27,6 +27,7 @@ opt.cursorline = true -- highlight the current cursor line
 -- turn on termguicolors for nightfly colorscheme to work
 -- (have to use iterm2 or any other true color terminal)
 opt.termguicolors = true
+opt.scrolloff = 8       -- scroll when cursor is 4 lines away from screen edge
 opt.background = "dark" -- colorschemes that can be light or dark will be made dark
 opt.signcolumn = "yes"  -- show sign column so that text doesn't shift
 
@@ -40,8 +41,15 @@ opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
--- turn off swapfile
+-- backup, swap, undo
 opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
 
 -- cursor
 opt.guicursor = "i:block-blinkwait700-blinkoff400-blinkon250"
+
+-- misc
+opt.isfname:append("@-@")
+opt.updatetime = 50

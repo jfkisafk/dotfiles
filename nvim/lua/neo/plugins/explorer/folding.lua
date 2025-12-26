@@ -5,6 +5,7 @@ return {
 	init = function()
 		vim.o.foldcolumn = "0"
 		vim.o.foldlevel = 99
+		vim.o.foldmethod = "manual"
 		vim.o.foldlevelstart = 99
 		vim.o.foldenable = true
 	end,
