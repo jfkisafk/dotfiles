@@ -15,9 +15,7 @@ require("lazy").setup({
   { import = "neo.plugins" },
   { import = "neo.plugins.code" },
   { import = "neo.plugins.ui" },
-  { import = "neo.plugins.completions" },
   { import = "neo.plugins.explorer" },
-  { import = "neo.plugins.git" }
 }, {
   checker = {
     enabled = true,
