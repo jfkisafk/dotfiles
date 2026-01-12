@@ -6,6 +6,6 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	keys = {
-		{ "<leader>st", "<cmd>Markview splitToggle<CR>", desc = "Toggle markdown preview" },
+		{ "<leader>mp", "<cmd>Markview splitToggle<CR>", desc = "Toggle markdown preview" },
 	},
 }

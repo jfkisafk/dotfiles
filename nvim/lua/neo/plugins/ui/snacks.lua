@@ -4,10 +4,10 @@ return {
   lazy = false,
   ---@type snacks.Config
   opts = {
-    animate = { 
+    animate = {
       fps = 240,
     },
-    bigfile = { 
+    bigfile = {
       size = 5 * 1024 * 1024, -- 5MB
     },
     dashboard = {
@@ -72,7 +72,7 @@ return {
       enabled = true,
       timeout = 3000,
     },
-    picker = { 
+    picker = {
       matcher = {
         cwd_bonus = true, -- give bonus for matching files in the cwd
         frecency = true, -- frecency bonus
@@ -99,11 +99,10 @@ return {
     { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
     -- find
     { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
-    { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
     { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
-    { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
     { "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects" },
     { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
+    { "<leader>fz", function() Snacks.picker.zoxide() end, desc = "Zoxide Projects" },
     -- git
     { "<leader>gb", function() Snacks.picker.git_branches() end, desc = "Git Branches" },
     { "<leader>gl", function() Snacks.picker.git_log() end, desc = "Git Log" },
@@ -124,7 +123,6 @@ return {
     -- search
     { '<leader>s"', function() Snacks.picker.registers() end, desc = "Registers" },
     { '<leader>s/', function() Snacks.picker.search_history() end, desc = "Search History" },
-    { "<leader>sa", function() Snacks.picker.autocmds() end, desc = "Autocmds" },
     { "<leader>sb", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
     { "<leader>sc", function() Snacks.picker.command_history() end, desc = "Command History" },
     { "<leader>sC", function() Snacks.picker.commands() end, desc = "Commands" },
@@ -142,7 +140,6 @@ return {
     { "<leader>sq", function() Snacks.picker.qflist() end, desc = "Quickfix List" },
     { "<leader>sR", function() Snacks.picker.resume() end, desc = "Resume" },
     { "<leader>su", function() Snacks.picker.undo() end, desc = "Undo History" },
-    { "<leader>uC", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
     -- LSP
     { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
     { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
@@ -207,7 +204,7 @@ return {
             dd(...)
           end
         else
-          vim.print = _G.dd 
+          vim.print = _G.dd
         end
 
         -- Create some toggle mappings
