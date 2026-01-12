@@ -241,7 +241,7 @@ return {
     "nvim-treesitter/nvim-treesitter-context",
     event = "BufReadPost",
     opts = {
-      multiline_threshold = 3,
+      multiline_threshold = 2,
     },
     keys = {
       {
