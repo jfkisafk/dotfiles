@@ -13,7 +13,7 @@ return {
     dashboard = {
       sections = {
         { section = "header" },
-        { section = "keys", gap = 1, padding = 1 },
+        { section = "keys",  gap = 1, padding = 1 },
         {
           pane = 2,
           icon = " ",
@@ -75,7 +75,7 @@ return {
     picker = {
       matcher = {
         cwd_bonus = true, -- give bonus for matching files in the cwd
-        frecency = true, -- frecency bonus
+        frecency = true,  -- frecency bonus
       },
     },
     quickfile = { enabled = true },
@@ -631,8 +631,8 @@ return {
         Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
         Snacks.toggle.diagnostics():map("<leader>ud")
         Snacks.toggle
-          .option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 })
-          :map("<leader>uc")
+            .option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 })
+            :map("<leader>uc")
         Snacks.toggle.inlay_hints():map("<leader>uh")
         Snacks.toggle.indent():map("<leader>ug")
         Snacks.toggle.dim():map("<leader>uD")

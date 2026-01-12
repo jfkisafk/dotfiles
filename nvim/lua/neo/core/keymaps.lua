@@ -25,6 +25,7 @@ keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) 
 keymap.set("n", "<S-Right>", "<cmd>tabn<CR>", { desc = "Go to next tab" })                      --  go to next tab
 keymap.set("n", "<S-Left>", "<cmd>tabp<CR>", { desc = "Go to previous tab" })                   --  go to previous tab
 keymap.set("n", "<leader>tb", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })                     -- open new tab
 
 -- vertical movements
 keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down half a page" })
