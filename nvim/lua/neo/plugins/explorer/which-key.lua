@@ -1,11 +1,11 @@
 return {
-	"folke/which-key.nvim",
-	event = "VeryLazy",
+  "folke/which-key.nvim",
+  event = "VeryLazy",
   dependencies = {
-    { 'nvim-mini/mini.icons', version = false },
+    { "nvim-mini/mini.icons", version = false },
   },
-	init = function()
-		vim.o.timeout = true
-		vim.o.timeoutlen = 500
-	end,
+  init = function()
+    vim.o.timeout = true
+    vim.o.timeoutlen = 500
+  end,
 }

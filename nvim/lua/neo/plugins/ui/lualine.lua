@@ -56,14 +56,13 @@ return {
       sections = {
         lualine_x = {
           {
-            symbols.get,
-            cond = symbols.has,
-            color = { fg = p.love },
-          },
-          {
             lazy_status.updates,
             cond = lazy_status.has_updates,
             color = { fg = p.love },
+          },
+          {
+            symbols.get,
+            cond = symbols.has,
           },
           { "encoding" },
           { "fileformat" },
