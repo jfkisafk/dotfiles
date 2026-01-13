@@ -68,7 +68,6 @@ return {
         "pyink",
         "rustywind",
         "stylua",
-        "yamlfmt",
 
         "gitlint",
         "hadolint",
@@ -83,9 +82,6 @@ return {
         "yamllint",
         "prettier",
         "stylua",
-
-        "js-debug-adapter",
-        "netcoredbg",
       },
     },
     dependencies = {

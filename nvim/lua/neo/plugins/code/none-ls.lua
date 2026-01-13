@@ -16,7 +16,6 @@ return {
         null_ls.builtins.diagnostics.mypy,
         null_ls.builtins.diagnostics.pylint,
         null_ls.builtins.diagnostics.revive,
-        null_ls.builtins.diagnostics.spectral,
         null_ls.builtins.diagnostics.staticcheck,
         null_ls.builtins.diagnostics.stylelint,
         null_ls.builtins.diagnostics.tfsec,
@@ -37,7 +36,6 @@ return {
         null_ls.builtins.formatting.pyink,
         null_ls.builtins.formatting.rustywind,
         null_ls.builtins.formatting.stylua,
-        null_ls.builtins.formatting.yamlfmt,
       },
       on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
