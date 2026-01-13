@@ -63,6 +63,40 @@ return {
       },
     },
     explorer = { enabled = true },
+    gitbrowse = {
+      url_patterns = {
+        ["github%.com"] = {
+          branch = "/tree/{branch}",
+          file = "/blob/{branch}/{file}#L{line_start}-L{line_end}",
+          permalink = "/blob/{commit}/{file}#L{line_start}-L{line_end}",
+          commit = "/commit/{commit}",
+        },
+        ["github%.docusignhq%.com"] = {
+          branch = "/tree/{branch}",
+          file = "/blob/{branch}/{file}#L{line_start}-L{line_end}",
+          permalink = "/blob/{commit}/{file}#L{line_start}-L{line_end}",
+          commit = "/commit/{commit}",
+        },
+        ["gitlab%.com"] = {
+          branch = "/-/tree/{branch}",
+          file = "/-/blob/{branch}/{file}#L{line_start}-{line_end}",
+          permalink = "/-/blob/{commit}/{file}#L{line_start}-{line_end}",
+          commit = "/-/commit/{commit}",
+        },
+        ["bitbucket%.org"] = {
+          branch = "/src/{branch}",
+          file = "/src/{branch}/{file}#lines-{line_start}-L{line_end}",
+          permalink = "/src/{commit}/{file}#lines-{line_start}-L{line_end}",
+          commit = "/commits/{commit}",
+        },
+        ["git.sr.ht"] = {
+          branch = "/tree/{branch}",
+          file = "/tree/{branch}/item/{file}",
+          permalink = "/tree/{commit}/item/{file}#L{line_start}",
+          commit = "/commit/{commit}",
+        },
+      },
+    },
     image = { enabled = true },
     indent = {
       scope = { underline = true },
@@ -485,7 +519,7 @@ return {
       desc = "Rename File",
     },
     {
-      "<leader>gB",
+      "<leader>gh",
       function()
         Snacks.gitbrowse()
       end,
