@@ -219,35 +219,6 @@ return {
       end,
       desc = "Git Log File",
     },
-    -- gh
-    {
-      "<leader>gi",
-      function()
-        Snacks.picker.gh_issue()
-      end,
-      desc = "GitHub Issues (open)",
-    },
-    {
-      "<leader>gI",
-      function()
-        Snacks.picker.gh_issue({ state = "all" })
-      end,
-      desc = "GitHub Issues (all)",
-    },
-    {
-      "<leader>gp",
-      function()
-        Snacks.picker.gh_pr()
-      end,
-      desc = "GitHub Pull Requests (open)",
-    },
-    {
-      "<leader>gP",
-      function()
-        Snacks.picker.gh_pr({ state = "all" })
-      end,
-      desc = "GitHub Pull Requests (all)",
-    },
     -- Grep
     {
       "<leader>sB",
@@ -322,18 +293,11 @@ return {
       desc = "Buffer Diagnostics",
     },
     {
-      "<leader>sh",
+      "<leader>sH",
       function()
         Snacks.picker.help()
       end,
       desc = "Help Pages",
-    },
-    {
-      "<leader>sH",
-      function()
-        Snacks.picker.highlights()
-      end,
-      desc = "Highlights",
     },
     {
       "<leader>si",
