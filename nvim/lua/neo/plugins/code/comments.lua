@@ -3,14 +3,14 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   keys = {
     {
-      "<leader>gc",
+      "<leader>/",
       function()
         require("Comment.api").toggle.linewise.current()
       end,
       desc = "Toggle comment",
     },
     {
-      "<leader>gc",
+      "<leader>/",
       "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
       mode = "v",
       desc = "Toggle comment",

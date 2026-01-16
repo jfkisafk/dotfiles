@@ -140,7 +140,7 @@ return {
       desc = "Buffers",
     },
     {
-      "<leader>/",
+      "<localleader>/",
       function()
         Snacks.picker.grep()
       end,

@@ -10,7 +10,6 @@ return {
       options = {
         mode = "tabs",
         style_preset = bufferline.style_preset.minimal,
-        always_show_bufferline = false,
         offsets = {
           {
             filetype = "snacks_layout_box",

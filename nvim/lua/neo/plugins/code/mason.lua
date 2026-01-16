@@ -68,6 +68,7 @@ return {
         "pyink",
         "rustywind",
         "stylua",
+        "yamlfmt",
 
         "gitlint",
         "hadolint",

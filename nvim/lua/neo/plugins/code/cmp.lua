@@ -87,17 +87,44 @@ return {
     end,
   },
   {
-    "supermaven-inc/supermaven-nvim",
-    config = function()
-      local sup = require("supermaven-nvim")
-      local palette = require("rose-pine.palette")
-
-      sup.setup({
-        color = {
-          suggestion_color = palette.muted,
-          cterm = 244,
+    "github/copilot.vim",
+  },
+  {
+    "olimorris/codecompanion.nvim",
+    version = "^18.0.0",
+    event = { "BufReadPre", "BufNewFile" },
+    opts = {
+      interactions = {
+        chat = {
+          adapter = {
+            name = "copilot",
+            model = "claude-sonnet-4.5",
+          },
         },
-      })
-    end,
+        inline = {
+          adapter = {
+            name = "copilot",
+            model = "claude-sonnet-4.5",
+          },
+        },
+        cmd = {
+          adapter = "copilot",
+        },
+      },
+    },
+    keys = {
+      { "<leader>cc", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "n", "v" }, desc = "Code Companion Chat" },
+      {
+        "<leader>cv",
+        "<cmd>CodeCompanion<cr>",
+        mode = { "n", "v" },
+        desc = "Code Companion Inline",
+      },
+      { "<leader>ce", "<cmd>CodeCompanion /explain<cr>",   mode = "v",          desc = "Code Companion Explain" },
+    },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
   },
 }
