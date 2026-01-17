@@ -1,85 +1,65 @@
 return {
   {
-    "hrsh7th/nvim-cmp",
+    "saghen/blink.cmp",
+    version = "*",
     event = "InsertEnter",
     dependencies = {
-      "hrsh7th/cmp-buffer", -- source for text in buffer
-      "hrsh7th/cmp-path",   -- source for file system paths
-      {
-        "L3MON4D3/LuaSnip",
-        -- follow latest release.
-        version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-        -- install jsregexp (optional!).
-        build = "make install_jsregexp",
-      },
-      "saadparwaiz1/cmp_luasnip",     -- for autocompletion
-      "rafamadriz/friendly-snippets", -- useful snippets
-      "onsails/lspkind.nvim",         -- vs-code like pictograms
+      "rafamadriz/friendly-snippets",
     },
-    config = function()
-      local cmp = require("cmp")
-      local luasnip = require("luasnip")
-      local lspkind = require("lspkind")
-
-      -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
-      require("luasnip.loaders.from_vscode").lazy_load()
-
-      cmp.setup({
-        completion = {
-          completeopt = "menu,menuone,preview,noselect",
+    opts = {
+      keymap = {
+        preset = "default",
+        ["<C-k>"] = { "select_prev", "fallback" },
+        ["<C-j>"] = { "select_next", "fallback" },
+        ["<C-b>"] = { "scroll_documentation_up", "fallback" },
+        ["<C-f>"] = { "scroll_documentation_down", "fallback" },
+        ["<C-Space>"] = { "show", "fallback" },
+        ["<C-e>"] = { "hide", "fallback" },
+        ["<CR>"] = { "accept", "fallback" },
+      },
+      appearance = {
+        nerd_font_variant = "mono",
+      },
+      sources = {
+        default = { "lsp", "path", "snippets", "buffer" },
+      },
+      completion = {
+        menu = {
+          border = "rounded",
+          draw = {
+            columns = {
+              { "kind_icon" },
+              { "label",    "label_description", gap = 1 },
+            },
+          },
         },
-        snippet = { -- configure how nvim-cmp interacts with snippet engine
-          expand = function(args)
-            luasnip.lsp_expand(args.body)
-          end,
+        documentation = {
+          auto_show = true,
+          auto_show_delay_ms = 500,
+          window = {
+            border = "rounded",
+          },
         },
-        mapping = cmp.mapping.preset.insert({
-          ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
-          ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
-          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-f>"] = cmp.mapping.scroll_docs(4),
-          ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-          ["<C-e>"] = cmp.mapping.abort(),        -- close completion window
-          ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        }),
-
+      },
+      signature = {
+        enabled = true,
         window = {
-          completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
+          border = "rounded",
         },
-
-        -- sources for autocompletion
-        sources = cmp.config.sources({
-          { name = "nvim_lsp" },
-          { name = "luasnip" }, -- snippets
-          { name = "buffer" },  -- text within current buffer
-          { name = "path" },    -- file system paths
-        }),
-
-        -- configure lspkind for vs-code like pictograms in completion menu
-        formatting = {
-          fields = { "kind", "abbr" },
-          format = lspkind.cmp_format({
-            maxwidth = 50,
-            mode = "symbol",
-          }),
-        },
-      })
-    end,
+      },
+    },
   },
   {
-    "hrsh7th/cmp-nvim-lsp",
+    "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       { "antosha417/nvim-lsp-file-operations", config = true },
       { "folke/lazydev.nvim",                  opts = {} },
+      { "saghen/blink.cmp" },
     },
     config = function()
-      -- import cmp-nvim-lsp plugin
-      local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
-      -- used to enable autocompletion (assign to every lsp server config)
-      local capabilities = cmp_nvim_lsp.default_capabilities()
+      -- Get blink.cmp capabilities
+      local capabilities = require("blink.cmp").get_lsp_capabilities()
 
       vim.lsp.config("*", {
         capabilities = capabilities,
@@ -110,13 +90,16 @@ return {
         cmd = {
           adapter = "copilot",
         },
+        background = {
+          adapter = "copilot",
+        },
       },
     },
     keys = {
       { "<leader>cc", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "n", "v" }, desc = "Code Companion Chat" },
       {
         "<leader>cv",
-        "<cmd>CodeCompanion<cr>",
+        "<cmd>'<,'>CodeCompanion<cr>",
         mode = { "n", "v" },
         desc = "Code Companion Inline",
       },

@@ -40,6 +40,7 @@ return {
   },
   {
     "pwntester/octo.nvim",
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons",
