@@ -55,7 +55,6 @@ return {
       ensure_installed = {
         "biome",
         "black",
-        "csharpier",
         "gofumpt",
         "goimports-reviser",
         "golines",

@@ -23,7 +23,10 @@ return {
 
         null_ls.builtins.formatting.biome,
         null_ls.builtins.formatting.black,
-        null_ls.builtins.formatting.csharpier,
+        null_ls.builtins.formatting.csharpier.with({
+          command = vim.fn.expand("~/.dotnet/tools/csharpier"),
+          args = { "--write-stdout" },
+        }),
         null_ls.builtins.formatting.gofumpt,
         null_ls.builtins.formatting.goimports_reviser,
         null_ls.builtins.formatting.golines,
