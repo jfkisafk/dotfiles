@@ -75,9 +75,6 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     opts = {
       display = {
-        diff = {
-          provider = "mini_diff",
-        },
         chat = {
           fold_context = true,
           fold_reasoning = true,
@@ -88,8 +85,7 @@ return {
       interactions = {
         chat = {
           adapter = {
-            name = "copilot",
-            model = "claude-opus-4.6",
+            name = "claude_code",
           },
         },
         inline = {
@@ -103,6 +99,27 @@ return {
         },
         background = {
           adapter = "copilot",
+        },
+      },
+      adapters = {
+        acp = {
+          claude_code = function()
+            return require("codecompanion.adapters").extend("claude_code", {
+              env = {
+                ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY"),
+              },
+              defaults = {
+                model = "opus",
+              },
+            })
+          end,
+          gemini_cli = function()
+            return require("codecompanion.adapters").extend("gemini_cli", {
+              defaults = {
+                auth_method = "oauth-personal",
+              },
+            })
+          end,
         },
       },
     },

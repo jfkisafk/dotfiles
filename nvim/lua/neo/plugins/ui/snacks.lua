@@ -434,20 +434,6 @@ return {
       desc = "Goto T[y]pe Definition",
     },
     {
-      "gai",
-      function()
-        Snacks.picker.lsp_incoming_calls()
-      end,
-      desc = "C[a]lls Incoming",
-    },
-    {
-      "gao",
-      function()
-        Snacks.picker.lsp_outgoing_calls()
-      end,
-      desc = "C[a]lls Outgoing",
-    },
-    {
       "<leader>ss",
       function()
         Snacks.picker.lsp_symbols()
