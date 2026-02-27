@@ -31,8 +31,6 @@ return {
 
         map("n", "<leader>gp", gs.preview_hunk, "Preview hunk")
 
-        map({ "n", "v" }, "<leader>gb", "<cmd>Gitsigns blame<cr>", "Show Blame")
-
         -- Text object
         map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Gitsigns select hunk")
       end,
@@ -74,5 +72,23 @@ return {
         },
       })
     end,
+  },
+  {
+    "FabijanZulj/blame.nvim",
+    event = "VeryLazy",
+    opts = {
+      date_format = "%Y-%m-%d %H:%M",
+      views = {
+        window = {
+          width = 50,
+          height = 20,
+        },
+      },
+      merge_consecutive = false,
+      max_summary_width = 30,
+    },
+    keys = {
+      { "<leader>gb", "<cmd>BlameToggle window<cr>", desc = "Git Blame (Window)" },
+    },
   },
 }

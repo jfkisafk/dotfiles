@@ -74,17 +74,28 @@ return {
     version = "^18.0.0",
     event = { "BufReadPre", "BufNewFile" },
     opts = {
+      display = {
+        diff = {
+          provider = "mini_diff",
+        },
+        chat = {
+          fold_context = true,
+          fold_reasoning = true,
+          show_reasoning = true,
+          start_in_insert_mode = true,
+        },
+      },
       interactions = {
         chat = {
           adapter = {
             name = "copilot",
-            model = "claude-sonnet-4.5",
+            model = "claude-opus-4.6",
           },
         },
         inline = {
           adapter = {
             name = "copilot",
-            model = "claude-sonnet-4.5",
+            model = "claude-opus-4.6",
           },
         },
         cmd = {
@@ -107,6 +118,7 @@ return {
     },
     dependencies = {
       "nvim-lua/plenary.nvim",
+      { "nvim-mini/mini.diff", version = "*" },
       "nvim-treesitter/nvim-treesitter",
     },
   },
