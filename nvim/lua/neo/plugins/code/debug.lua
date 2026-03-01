@@ -27,16 +27,49 @@ return {
         args = { "--interpreter=vscode" },
       }
 
+      local function find_csproj()
+        local dir = vim.fn.expand("%:p:h")
+        while dir and dir ~= "/" do
+          local csproj = vim.fn.glob(dir .. "/*.csproj")
+          if csproj ~= "" then
+            return csproj:gmatch("[^\n]+")()
+          end
+          dir = vim.fn.fnamemodify(dir, ":h")
+        end
+        return nil
+      end
+
+      local function smart_pick_process()
+        local utils = require("dap.utils")
+        local csproj = find_csproj()
+        local project = csproj and vim.fn.fnamemodify(csproj, ":t:r") or nil
+        local is_build_output = function(name)
+          return name:find("/bin/") ~= nil and name:find("/net%d+%.%d+/") ~= nil
+        end
+        local filter = project
+            and function(proc)
+              return proc.name:find(project, 1, true) ~= nil and is_build_output(proc.name)
+            end
+            or function(proc)
+              return is_build_output(proc.name)
+            end
+
+        local procs = utils.get_processes({ filter = filter })
+        if #procs == 1 then
+          return procs[1].pid
+        end
+
+        local prompt = project and ("Attach to " .. project .. ": ") or "Select process: "
+        return utils.pick_process({ filter = filter, prompt = prompt })
+      end
+
       dap.configurations.cs = {
         {
           type = "coreclr",
           name = "attach - netcoredbg",
           request = "attach",
-          processId = function()
-            local project = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
-            return require("dap.utils").pick_process({ filter = project })
-          end,
-          justMyCode = true,
+          processId = smart_pick_process,
+          justMyCode = false,
         },
       }
     end,
@@ -95,7 +128,7 @@ return {
 
       require("dap-view").setup({
         winbar = {
-          sections = { "scopes", "watches", "threads", "exceptions" },
+          sections = { "scopes", "watches", "threads", "exceptions", "repl" },
           default_section = "scopes",
           show_keymap_hints = false,
           controls = {
@@ -107,6 +140,7 @@ return {
             breakpoints = { label = "󰀘 " },
             watches = { label = " " },
             scopes = { label = " " },
+            repl = { label = " " },
           },
         },
         windows = {

@@ -3,6 +3,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     branch = "main",
     build = ":TSUpdate",
+    dependencies = { "LiadOz/nvim-dap-repl-highlights" },
     event = { "BufReadPost", "FileType" },
     init = function()
       vim.api.nvim_create_autocmd("FileType", {
@@ -48,6 +49,7 @@ return {
     end,
 
     config = function()
+      require("nvim-dap-repl-highlights").setup()
       local ts = require("nvim-treesitter")
       ts.setup({ install_dir = vim.fn.stdpath("data") .. "/treesitter" })
       ts.install({
@@ -57,6 +59,7 @@ return {
         "c_sharp",
         "comment",
         "css",
+        "dap_repl",
         "csv",
         "diff",
         "dockerfile",
