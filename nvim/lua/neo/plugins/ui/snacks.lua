@@ -111,6 +111,18 @@ return {
         cwd_bonus = true, -- give bonus for matching files in the cwd
         frecency = true,  -- frecency bonus
       },
+      win = {
+        input = {
+          keys = {
+            ["<C-t>"] = { "tab", mode = { "n", "i" } },
+          },
+        },
+        list = {
+          keys = {
+            ["<C-t>"] = { "tab", mode = { "n" } },
+          },
+        },
+      },
     },
     quickfile = { enabled = true },
     scope = { enabled = true },
