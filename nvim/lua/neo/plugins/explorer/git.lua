@@ -76,19 +76,24 @@ return {
   {
     "FabijanZulj/blame.nvim",
     event = "VeryLazy",
-    opts = {
-      date_format = "%Y-%m-%d %H:%M",
-      views = {
-        window = {
-          width = 50,
-          height = 20,
-        },
-      },
-      merge_consecutive = false,
-      max_summary_width = 30,
-    },
     keys = {
       { "<leader>gb", "<cmd>BlameToggle window<cr>", desc = "Git Blame (Window)" },
     },
+    config = function()
+      local p = require("rose-pine.palette")
+
+      require("blame").setup({
+        date_format = "%Y-%m-%d %H:%M",
+        views = {
+          window = {
+            width = 50,
+            height = 20,
+          },
+        },
+        merge_consecutive = false,
+        max_summary_width = 30,
+        colors = { p.love, p.gold, p.rose, p.pine, p.foam, p.iris },
+      })
+    end,
   },
 }

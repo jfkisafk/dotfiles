@@ -87,6 +87,20 @@ return {
           adapter = {
             name = "claude_code",
           },
+          keymaps = {
+            _acp_allow_always = {
+              modes = { n = "<F1>" },
+              description = "Allow Always",
+            },
+            _acp_allow_once = {
+              modes = { n = "<F2>" },
+              description = "Allow Once",
+            },
+            _acp_reject_once = {
+              modes = { n = "<F3>" },
+              description = "Reject Once",
+            },
+          },
         },
         inline = {
           adapter = {
