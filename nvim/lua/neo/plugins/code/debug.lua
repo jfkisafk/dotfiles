@@ -74,16 +74,11 @@ return {
       }
     end,
     keys = {
-      { "<leader>dc", "<cmd>lua require'dap'.continue()<CR>",          desc = "DAP continue" },
-      { "<leader>ds", "<cmd>lua require'dap'.step_over()<CR>",         desc = "DAP step over" },
-      { "<leader>da", "<cmd>lua require'dap'.step_into()<CR>",         desc = " DAP step into" },
-      { "<leader>df", "<cmd>lua require'dap'.step_out()<CR>",          desc = "DAP step out" },
-      { "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", desc = "DAP toggle breakpoint" },
-      { "<F6>",       "<cmd>lua require'dap'.continue()<CR>",          desc = "DAP continue" },
-      { "<F8>",       "<cmd>lua require'dap'.step_over()<CR>",         desc = "DAP step over" },
-      { "<F7>",       "<cmd>lua require'dap'.step_into()<CR>",         desc = " DAP step into" },
-      { "<F9>",       "<cmd>lua require'dap'.step_out()<CR>",          desc = "DAP step out" },
-      { "<F5>",       "<cmd>lua require'dap'.toggle_breakpoint()<CR>", desc = "DAP toggle breakpoint" },
+      { "<F6>", "<cmd>lua require'dap'.continue()<CR>",          desc = "DAP continue" },
+      { "<F8>", "<cmd>lua require'dap'.step_over()<CR>",         desc = "DAP step over" },
+      { "<F7>", "<cmd>lua require'dap'.step_into()<CR>",         desc = "DAP step into" },
+      { "<F9>", "<cmd>lua require'dap'.step_out()<CR>",          desc = "DAP step out" },
+      { "<F5>", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", desc = "DAP toggle breakpoint" },
     },
   },
   {

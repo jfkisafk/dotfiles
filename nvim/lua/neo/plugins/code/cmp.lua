@@ -95,10 +95,40 @@ return {
           },
         },
         cmd = {
-          adapter = "copilot",
+          adapter = {
+            name = "copilot",
+            model = "claude-sonnet-4.6",
+          },
         },
         background = {
-          adapter = "copilot",
+          adapter = {
+            name = "copilot",
+            model = "claude-sonnet-4.6",
+          },
+        },
+        shared = {
+          keymaps = {
+            always_accept = {
+              callback = "keymaps.always_accept",
+              modes = { n = "<F1>" },
+            },
+            accept_change = {
+              callback = "keymaps.accept_change",
+              modes = { n = "<F2>" },
+            },
+            reject_change = {
+              callback = "keymaps.reject_change",
+              modes = { n = "<F3>" },
+            },
+            next_hunk = {
+              callback = "keymaps.next_hunk",
+              modes = { n = "]h" },
+            },
+            previous_hunk = {
+              callback = "keymaps.previous_hunk",
+              modes = { n = "[h" },
+            },
+          },
         },
       },
       adapters = {
