@@ -74,6 +74,13 @@ return {
     version = "^19.0.0",
     event = { "BufReadPre", "BufNewFile" },
     opts = {
+      mcp = {
+        servers = {
+          ["atlassian"] = {
+            cmd = { "npx", "-y", "mcp-remote", "https://mcp.atlassian.com/v1/sse" },
+          },
+        },
+      },
       display = {
         chat = {
           fold_context = true,
