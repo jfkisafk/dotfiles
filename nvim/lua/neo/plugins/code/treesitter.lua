@@ -51,7 +51,7 @@ return {
     config = function()
       require("nvim-dap-repl-highlights").setup()
       local ts = require("nvim-treesitter")
-      ts.setup({ install_dir = vim.fn.stdpath("data") .. "/treesitter" })
+      ts.setup({})
       ts.install({
         "astro",
         "awk",
