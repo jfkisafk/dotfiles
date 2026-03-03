@@ -49,6 +49,10 @@ return {
       hl_group = "lualine_c_normal",
     })
 
+    local function get_symbols()
+      return symbols.get():gsub("%b()", "")
+    end
+
     require("lualine").setup({
       options = {
         theme = theme,
@@ -61,7 +65,7 @@ return {
             color = { fg = p.love },
           },
           {
-            symbols.get,
+            get_symbols,
             cond = symbols.has,
           },
           { "encoding" },
