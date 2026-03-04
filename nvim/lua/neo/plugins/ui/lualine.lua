@@ -53,6 +53,27 @@ return {
       return symbols.get():gsub("%b()", "")
     end
 
+    local mason_registry = require("mason-registry")
+    local mason_outdated = {}
+
+    local function mason_check()
+      mason_outdated = {}
+      for _, pkg in ipairs(mason_registry.get_installed_packages()) do
+        if pkg.name == "csharp-language-server" then
+          goto continue
+        end
+        local installed = pkg:get_installed_version()
+        local latest = pkg:get_latest_version()
+        if installed and latest and installed ~= latest then
+          table.insert(mason_outdated, { name = pkg.name, version = latest })
+        end
+        ::continue::
+      end
+    end
+
+    mason_check()
+    mason_registry:on("package:install:success", vim.schedule_wrap(mason_check))
+
     require("lualine").setup({
       options = {
         theme = theme,
@@ -63,6 +84,15 @@ return {
             lazy_status.updates,
             cond = lazy_status.has_updates,
             color = { fg = p.love },
+          },
+          {
+            function()
+              return "󱌣 " .. #mason_outdated
+            end,
+            cond = function()
+              return #mason_outdated > 0
+            end,
+            color = { fg = p.iris },
           },
           {
             get_symbols,

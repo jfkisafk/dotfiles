@@ -29,49 +29,12 @@ return {
 
         map("n", "<leader>gu", gs.undo_stage_hunk, "Undo stage hunk")
 
-        map("n", "<leader>gp", gs.preview_hunk, "Preview hunk")
+        map("n", "<leader>gP", gs.preview_hunk, "Preview hunk")
 
         -- Text object
         map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Gitsigns select hunk")
       end,
     },
-  },
-  {
-    "pwntester/octo.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
-    },
-    keys = {
-      { "<leader>gi", "<CMD>Octo issue list<CR>",        desc = "GitHub Issues" },
-      { "<leader>gp", "<CMD>Octo pr list<CR>",           desc = "GitHub Pull Requests" },
-      { "<leader>gn", "<CMD>Octo notification list<CR>", desc = "GitHub Notifications" },
-      { "<leader>gc", "<CMD>Octo pr create<CR>",         desc = "GitHub Create Pull Request" },
-    },
-    config = function()
-      local p = require("rose-pine.palette")
-
-      require("octo").setup({
-        default_merge_method = "squash",
-        default_delete_branch = true,
-        picker = "snacks",
-        colors = {
-          white = p.text,
-          grey = p.subtle,
-          black = p.base,
-          red = p.rose,
-          dark_red = p.love,
-          green = p.foam,
-          dark_green = p.pine,
-          yellow = p.gold,
-          dark_yellow = p.gold,
-          blue = "#7287fd",
-          dark_blue = p.love,
-          purple = p.iris,
-        },
-      })
-    end,
   },
   {
     "FabijanZulj/blame.nvim",

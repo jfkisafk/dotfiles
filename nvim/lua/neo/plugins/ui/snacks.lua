@@ -63,6 +63,7 @@ return {
       },
     },
     explorer = { enabled = true },
+    gh = {},
     gitbrowse = {
       url_patterns = {
         ["github%.com"] = {
@@ -111,16 +112,9 @@ return {
         cwd_bonus = true, -- give bonus for matching files in the cwd
         frecency = true,  -- frecency bonus
       },
-      win = {
-        input = {
-          keys = {
-            ["<C-t>"] = { "tab", mode = { "n", "i" } },
-          },
-        },
-        list = {
-          keys = {
-            ["<C-t>"] = { "tab", mode = { "n" } },
-          },
+      sources = {
+        gh_pr = {
+          confirm = "gh_diff",
         },
       },
     },
@@ -216,6 +210,20 @@ return {
       desc = "Zoxide Projects",
     },
     -- git
+    {
+      "<leader>gi",
+      function()
+        Snacks.picker.gh_issue()
+      end,
+      desc = "GitHub Issues",
+    },
+    {
+      "<leader>gp",
+      function()
+        Snacks.picker.gh_pr()
+      end,
+      desc = "GitHub Pull Requests",
+    },
     {
       "<leader>gl",
       function()
