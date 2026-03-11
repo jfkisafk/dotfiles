@@ -31,7 +31,7 @@ window-padding-balance = true
 window-vsync = true
 window-inherit-working-directory = true
 window-inherit-font-size = true
-background-opacity = 0.85
+background-opacity = 0.9
 background-blur-radius = 100
 minimum-contrast = 1.5
 
@@ -48,4 +48,4 @@ mouse-hide-while-typing = true
 link-url = true
 link-previews = true
 scrollback-limit = 1000000
-theme = light:rose-pine-dawn,dark:Lavandula
+theme = light:Rose Pine Dawn,dark:Rose Pine
