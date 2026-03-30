@@ -90,6 +90,23 @@ return {
         },
       },
       interactions = {
+        cli = {
+          agent = "claude_code",
+          agents = {
+            claude_code = {
+              cmd = "claude",
+              args = {},
+              description = "Claude Code CLI",
+              provider = "terminal",
+            },
+            gemini = {
+              cmd = "gemini",
+              args = {},
+              description = "Gemini CLI",
+              provider = "terminal",
+            },
+          },
+        },
         chat = {
           adapter = {
             name = "claude_code",
@@ -173,23 +190,6 @@ return {
           end,
         },
       },
-      cli = {
-        agent = "claude_code",
-        agents = {
-          claude_code = {
-            cmd = "claude",
-            args = {},
-            description = "Claude Code CLI",
-            provider = "terminal",
-          },
-          gemini = {
-            cmd = "gemini",
-            args = {},
-            description = "Gemini CLI",
-            provider = "terminal",
-          },
-        },
-      },
     },
     keys = {
       { "<leader>cc", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "n", "v" }, desc = "Code Companion Chat" },
@@ -201,7 +201,7 @@ return {
       },
       {
         "<leader>cp",
-        "<cmd>CodeCompanionCLI Ask<cr>",
+        "<cmd>CodeCompanionCLI! Ask<cr>",
         mode = { "n", "v" },
         desc = "Code Companion Prompt",
       },
