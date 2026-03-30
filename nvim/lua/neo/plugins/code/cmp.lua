@@ -173,6 +173,23 @@ return {
           end,
         },
       },
+      cli = {
+        agent = "claude_code",
+        agents = {
+          claude_code = {
+            cmd = "claude",
+            args = {},
+            description = "Claude Code CLI",
+            provider = "terminal",
+          },
+          gemini = {
+            cmd = "gemini",
+            args = {},
+            description = "Gemini CLI",
+            provider = "terminal",
+          },
+        },
+      },
     },
     keys = {
       { "<leader>cc", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "n", "v" }, desc = "Code Companion Chat" },
@@ -182,7 +199,24 @@ return {
         mode = { "n", "v" },
         desc = "Code Companion Inline",
       },
-      { "<leader>ce", "<cmd>CodeCompanion /explain<cr>",   mode = "v",          desc = "Code Companion Explain" },
+      {
+        "<leader>cp",
+        "<cmd>CodeCompanionCLI Ask<cr>",
+        mode = { "n", "v" },
+        desc = "Code Companion Prompt",
+      },
+      {
+        "<leader>cl",
+        "<cmd>CodeCompanionCLI!<cr>",
+        mode = { "n", "v" },
+        desc = "Code Companion Claude Cli",
+      },
+      {
+        "<leader>cg",
+        "<cmd>CodeCompanionCLI! agent=gemini<cr>",
+        mode = { "n", "v" },
+        desc = "Code Companion Gemini Cli",
+      },
     },
     dependencies = {
       "nvim-lua/plenary.nvim",
