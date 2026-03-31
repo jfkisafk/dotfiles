@@ -129,7 +129,7 @@ return {
         inline = {
           adapter = {
             name = "copilot",
-            model = "claude-opus-4.6",
+            model = "claude-sonnet-4.6",
           },
         },
         cmd = {
@@ -160,11 +160,11 @@ return {
             },
             next_hunk = {
               callback = "keymaps.next_hunk",
-              modes = { n = "]h" },
+              modes = { n = "]" },
             },
             previous_hunk = {
               callback = "keymaps.previous_hunk",
-              modes = { n = "[h" },
+              modes = { n = "[" },
             },
           },
         },
@@ -177,7 +177,7 @@ return {
                 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY"),
               },
               defaults = {
-                model = "opus",
+                model = "default",
               },
             })
           end,
