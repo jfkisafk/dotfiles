@@ -192,7 +192,7 @@ return {
       },
     },
     keys = {
-      { "<leader>cc", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "n", "v" }, desc = "Code Companion Chat" },
+      { "<leader>ct", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "n", "v" }, desc = "Code Companion Chat" },
       {
         "<leader>cv",
         "<cmd>'<,'>CodeCompanion<cr>",
@@ -201,21 +201,27 @@ return {
       },
       {
         "<leader>cp",
-        "<cmd>CodeCompanionCLI! Ask<cr>",
+        "<cmd>CodeCompanionChat adapter=claude_code<cr>",
         mode = { "n", "v" },
         desc = "Code Companion Prompt",
       },
       {
-        "<leader>cl",
-        "<cmd>CodeCompanionCLI!<cr>",
+        "<leader>co",
+        "<cmd>CodeCompanionChat adapter=copilot<cr>",
         mode = { "n", "v" },
-        desc = "Code Companion Claude Cli",
+        desc = "Code Companion Chat (copilot)",
       },
       {
         "<leader>cg",
-        "<cmd>CodeCompanionCLI! agent=gemini<cr>",
+        "<cmd>CodeCompanionChat adapter=gemini_cli<cr>",
         mode = { "n", "v" },
-        desc = "Code Companion Gemini Cli",
+        desc = "Code Companion Chat (gemini)",
+      },
+      {
+        "<leader>cc",
+        "<cmd>CodeCompanionChat adapter=claude_code<cr>",
+        mode = { "n", "v" },
+        desc = "Code Companion Chat (claude)",
       },
     },
     dependencies = {
