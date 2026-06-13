@@ -20,7 +20,6 @@ return {
       ensure_installed = {
         "astro",
         "bashls",
-        "csharp_ls@0.16",
         "cssls",
         "docker_compose_language_service",
         "dockerls",
