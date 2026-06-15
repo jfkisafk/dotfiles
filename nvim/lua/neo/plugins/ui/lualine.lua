@@ -61,6 +61,14 @@ return {
       vue = true,
     }
 
+    local function obsidian_status()
+      if vim.bo.filetype ~= "markdown" then
+        return ""
+      end
+      local ws = _G.Obsidian and _G.Obsidian.workspace
+      return ws and (" " .. ws.name) or ""
+    end
+
     local function roslyn_status()
       if vim.bo.filetype ~= "cs" then
         return ""
@@ -111,6 +119,13 @@ return {
       options = { theme = theme },
       sections = {
         lualine_x = {
+          {
+            obsidian_status,
+            cond = function()
+              return vim.bo.filetype == "markdown"
+            end,
+            color = { fg = p.gold },
+          },
           {
             roslyn_status,
             cond = function()

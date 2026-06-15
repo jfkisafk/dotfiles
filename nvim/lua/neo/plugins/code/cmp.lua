@@ -206,12 +206,6 @@ return {
         desc = "Code Companion Prompt",
       },
       {
-        "<leader>co",
-        "<cmd>CodeCompanionChat adapter=copilot<cr>",
-        mode = { "n", "v" },
-        desc = "Code Companion Chat (copilot)",
-      },
-      {
         "<leader>cg",
         "<cmd>CodeCompanionChat adapter=gemini_cli<cr>",
         mode = { "n", "v" },
