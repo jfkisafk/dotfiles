@@ -12,7 +12,6 @@ return {
         null_ls.builtins.diagnostics.gitlint,
         null_ls.builtins.diagnostics.hadolint,
         null_ls.builtins.diagnostics.ktlint,
-        null_ls.builtins.diagnostics.markdownlint,
         null_ls.builtins.diagnostics.mypy,
         null_ls.builtins.diagnostics.pylint,
         null_ls.builtins.diagnostics.revive,
@@ -34,7 +33,9 @@ return {
         null_ls.builtins.formatting.isort,
         null_ls.builtins.formatting.ktlint,
         null_ls.builtins.formatting.markdownlint,
-        null_ls.builtins.formatting.prettier,
+        null_ls.builtins.formatting.prettier.with({
+          disabled_filetypes = { "yaml" },
+        }),
         null_ls.builtins.formatting.pyink,
         null_ls.builtins.formatting.rustywind,
         null_ls.builtins.formatting.stylua,
