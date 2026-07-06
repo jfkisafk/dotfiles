@@ -12,8 +12,6 @@ return {
         null_ls.builtins.diagnostics.gitlint,
         null_ls.builtins.diagnostics.hadolint,
         null_ls.builtins.diagnostics.ktlint,
-        null_ls.builtins.diagnostics.mypy,
-        null_ls.builtins.diagnostics.pylint,
         null_ls.builtins.diagnostics.revive,
         null_ls.builtins.diagnostics.staticcheck,
         null_ls.builtins.diagnostics.stylelint,
@@ -21,7 +19,6 @@ return {
         null_ls.builtins.diagnostics.yamllint,
 
         null_ls.builtins.formatting.biome,
-        null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.csharpier.with({
           command = vim.fn.expand("~/.dotnet/tools/csharpier"),
           args = { "--write-stdout" },
@@ -30,13 +27,11 @@ return {
         null_ls.builtins.formatting.goimports_reviser,
         null_ls.builtins.formatting.golines,
         null_ls.builtins.formatting.google_java_format,
-        null_ls.builtins.formatting.isort,
         null_ls.builtins.formatting.ktlint,
         null_ls.builtins.formatting.markdownlint,
         null_ls.builtins.formatting.prettier.with({
           disabled_filetypes = { "yaml" },
         }),
-        null_ls.builtins.formatting.pyink,
         null_ls.builtins.formatting.rustywind,
         null_ls.builtins.formatting.stylua,
       },

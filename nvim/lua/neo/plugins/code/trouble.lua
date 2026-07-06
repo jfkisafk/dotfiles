@@ -61,7 +61,7 @@ return {
       preset = "ghost",
       options = {
         multilines = { enabled = true },
-        show_source = { if_many = true },
+        show_source = true,
       },
     },
   },
