@@ -9,8 +9,8 @@ click-repeat-interval = 500
 command = /run/current-system/sw/bin/nu
 
 # Set font with ligatures (==, !=, >=)
-font-family = JetbrainsMono Nerd Font
-font-family-bold = JetbrainsMono Nerd Font Bold
+font-family = SFMono Nerd Font
+font-family-bold = SFMono Nerd Font Bold
 font-size = 12.75
 font-feature = liga
 font-feature = calt
@@ -31,7 +31,7 @@ window-padding-balance = true
 window-vsync = true
 window-inherit-working-directory = true
 window-inherit-font-size = true
-background-opacity = 0.9
+background-opacity = 0.95
 background-blur-radius = 100
 minimum-contrast = 1.5
 

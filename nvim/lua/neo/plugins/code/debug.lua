@@ -43,15 +43,12 @@ return {
         local utils = require("dap.utils")
         local csproj = find_csproj()
         local project = csproj and vim.fn.fnamemodify(csproj, ":t:r") or nil
-        local is_build_output = function(name)
-          return name:find("/bin/") ~= nil and name:find("/net%d+%.%d+/") ~= nil
-        end
         local filter = project
             and function(proc)
-              return proc.name:find(project, 1, true) ~= nil and is_build_output(proc.name)
+              return proc.name:find(project, 1, true) ~= nil
             end
             or function(proc)
-              return is_build_output(proc.name)
+              return proc.name:find("/bin/") ~= nil and proc.name:find("/net%d+%.%d+/") ~= nil
             end
 
         local procs = utils.get_processes({ filter = filter })
