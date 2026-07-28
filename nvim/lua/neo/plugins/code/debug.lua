@@ -39,25 +39,31 @@ return {
         return nil
       end
 
-      local function smart_pick_process()
-        local utils = require("dap.utils")
+      local function find_app_port()
         local csproj = find_csproj()
-        local project = csproj and vim.fn.fnamemodify(csproj, ":t:r") or nil
-        local filter = project
-            and function(proc)
-              return proc.name:find(project, 1, true) ~= nil
-            end
-            or function(proc)
-              return proc.name:find("/bin/") ~= nil and proc.name:find("/net%d+%.%d+/") ~= nil
-            end
+        if not csproj then
+          return 5000
+        end
+        local dir = vim.fn.fnamemodify(csproj, ":h")
+        local settings_path = dir .. "/Properties/launchSettings.json"
+        if vim.fn.filereadable(settings_path) == 0 then
+          return 5000
+        end
+        local content = table.concat(vim.fn.readfile(settings_path), "\n")
+        local port = content:match('"applicationUrl"%s*:%s*"[^"]*://[^:]*:(%d+)')
+        return port and tonumber(port) or 5000
+      end
 
-        local procs = utils.get_processes({ filter = filter })
-        if #procs == 1 then
-          return procs[1].pid
+      local function smart_pick_process()
+        local port = find_app_port()
+        local output = vim.fn.system({ "lsof", "-ti", ":" .. port })
+        local pid = output:match("(%d+)")
+        if pid then
+          return tonumber(pid)
         end
 
-        local prompt = project and ("Attach to " .. project .. ": ") or "Select process: "
-        return utils.pick_process({ filter = filter, prompt = prompt })
+        vim.notify("No process found on port " .. port, vim.log.levels.WARN)
+        return dap.ABORT
       end
 
       dap.configurations.cs = {
