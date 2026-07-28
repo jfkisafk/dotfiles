@@ -1,0 +1,57 @@
+[theme]
+name = "rose-pine"
+
+[theme.custom]
+accent = "#eb6f92"
+
+[keys]
+prefix = "ctrl+s"
+
+split_vertical   = "prefix+|"
+split_horizontal = "prefix+_"
+close_pane = "prefix+x"
+
+zoom = "prefix+z"
+
+new_workspace   = "prefix+c"
+close_workspace = "prefix+shift+x"
+rename_workspace = "prefix+,"
+previous_workspace = "ctrl+shift+left"
+next_workspace = "ctrl+shift+right"
+
+new_worktree = "prefix+shift+c"
+remove_worktree = "prefix+shift+d"
+open_worktree = "prefix+shift+o"
+
+[ui]
+sidebar_collapsed_mode = "hidden"
+confirm_close = false
+hide_tab_bar_when_single_tab = true
+prompt_new_workspace_name = true
+
+[ui.toast]
+delivery = "herdr"
+
+[[keys.command]]
+key = "ctrl+h"
+type = "plugin_action"
+command = "vim-herdr-navigation.left"
+description = "navigate left (vim/herdr)"
+
+[[keys.command]]
+key = "ctrl+j"
+type = "plugin_action"
+command = "vim-herdr-navigation.down"
+description = "navigate down (vim/herdr)"
+
+[[keys.command]]
+key = "ctrl+k"
+type = "plugin_action"
+command = "vim-herdr-navigation.up"
+description = "navigate up (vim/herdr)"
+
+[[keys.command]]
+key = "ctrl+l"
+type = "plugin_action"
+command = "vim-herdr-navigation.right"
+description = "navigate right (vim/herdr)"
