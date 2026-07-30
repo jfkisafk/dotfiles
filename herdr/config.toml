@@ -24,6 +24,7 @@ remove_worktree = "prefix+shift+d"
 open_worktree = "prefix+shift+o"
 
 [ui]
+mouse_capture = false
 sidebar_collapsed_mode = "hidden"
 confirm_close = false
 hide_tab_bar_when_single_tab = true
