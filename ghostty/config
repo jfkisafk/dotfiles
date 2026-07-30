@@ -47,5 +47,5 @@ macos-icon = xray
 mouse-hide-while-typing = true
 link-url = true
 link-previews = true
-scrollback-limit = 1000000
+scrollback-limit = 100000000
 theme = light:Rose Pine Dawn,dark:Rose Pine

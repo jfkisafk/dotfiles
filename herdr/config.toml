@@ -24,7 +24,6 @@ remove_worktree = "prefix+shift+d"
 open_worktree = "prefix+shift+o"
 
 [ui]
-mouse_capture = false
 sidebar_collapsed_mode = "hidden"
 confirm_close = false
 hide_tab_bar_when_single_tab = true
@@ -32,6 +31,9 @@ prompt_new_workspace_name = true
 
 [ui.toast]
 delivery = "herdr"
+
+[advanced]
+scrollback_limit_bytes = 100000000
 
 [[keys.command]]
 key = "ctrl+h"
@@ -56,3 +58,9 @@ key = "ctrl+l"
 type = "plugin_action"
 command = "vim-herdr-navigation.right"
 description = "navigate right (vim/herdr)"
+
+[[keys.command]]
+key = "prefix+u"
+type = "plugin_action"
+command = "fzf-url"
+description = "fzf open URL from pane"
