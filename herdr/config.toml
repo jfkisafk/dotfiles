@@ -2,7 +2,9 @@
 name = "rose-pine"
 
 [theme.custom]
-accent = "#eb6f92"
+accent = "#ea9a97"
+green = "#3e8fb0"
+blue = "#3e8fb0"
 
 [keys]
 prefix = "ctrl+s"
@@ -16,8 +18,8 @@ zoom = "prefix+z"
 new_workspace   = "prefix+c"
 close_workspace = "prefix+shift+x"
 rename_workspace = "prefix+,"
-previous_workspace = "ctrl+shift+j"
-next_workspace = "ctrl+shift+k"
+previous_workspace = "ctrl+shift+k"
+next_workspace = "ctrl+shift+j"
 
 new_worktree = "prefix+shift+c"
 remove_worktree = "prefix+shift+d"

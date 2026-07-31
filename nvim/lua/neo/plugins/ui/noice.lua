@@ -48,8 +48,9 @@ return {
       },
     })
 
+    local p = require("rose-pine.palette")
     require("notify").setup({
-      background_colour = "#000000",
+      background_colour = p.base,
       render = "minimal",
       fps = 240,
     })

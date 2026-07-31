@@ -4,6 +4,10 @@ return {
   priority = 1000,
   config = function()
     require("rose-pine").setup({
+      palette = {
+        main = { rose = "#ea9a97", pine = "#3e8fb0" },
+        dawn = { rose = "#ea9a97", pine = "#3e8fb0" },
+      },
       styles = {
         transparency = true,
       },

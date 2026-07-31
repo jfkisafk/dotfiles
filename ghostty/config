@@ -49,3 +49,9 @@ link-url = true
 link-previews = true
 scrollback-limit = 100000000
 theme = light:Rose Pine Dawn,dark:Rose Pine
+
+# Override rose and pine to Moon variant values
+palette = 2=#3e8fb0
+palette = 6=#ea9a97
+palette = 10=#3e8fb0
+palette = 14=#ea9a97
