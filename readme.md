@@ -12,15 +12,23 @@ Even though _nixvim_ is present, adding to Nix meant every small update required
 the entire Nix/home-manager configuration.
 
 This way we can lazy load the plugins and LSPs quickly while maintaining the same Neovim
-development enbvironment.
+development environment.
 
 ### Ghostty configuration
 
-The [Ghostty](https://ghostty.org) configuration is managed in the same way, becuase nix does not provide a way to manage the ghostty configuration.
+The [Ghostty](https://ghostty.org) configuration is managed in the same way, because nix does not provide a way to manage the ghostty configuration.
 
 ### Karabiner configuration
 
-The [Karabiner](https://karabiner-elements.pqrs.org) configuration is managed in the same way, becuase nix does not provide a way to manage the karabiner configuration.
+The [Karabiner](https://karabiner-elements.pqrs.org) configuration is managed in the same way, because nix does not provide a way to manage the karabiner configuration.
+
+### Herdr configuration
+
+The [Herdr](https://herdr.dev) configuration is managed here because nix does not provide a way to manage the herdr configuration.
+
+### Posting configuration
+
+The [Posting](https://posting.sh) configuration is managed here because nix does not provide a way to manage the posting configuration.
 
 ## Requirements
 
