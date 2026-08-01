@@ -32,8 +32,8 @@ hide_tab_bar_when_single_tab = true
 prompt_new_workspace_name = true
 
 [ui.sound]
-done_path    = "/System/Library/Sounds/Glass.aiff"
-request_path = "/System/Library/Sounds/Submarine.aiff"
+done_path    = "sounds/glass.mp3"
+request_path = "sounds/submarine.mp3"
 
 [ui.toast]
 delivery = "herdr"
