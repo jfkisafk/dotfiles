@@ -14,10 +14,6 @@ the entire Nix/home-manager configuration.
 This way we can lazy load the plugins and LSPs quickly while maintaining the same Neovim
 development environment.
 
-### Ghostty configuration
-
-The [Ghostty](https://ghostty.org) configuration is managed in the same way, because nix does not provide a way to manage the ghostty configuration.
-
 ### Karabiner configuration
 
 The [Karabiner](https://karabiner-elements.pqrs.org) configuration is managed in the same way, because nix does not provide a way to manage the karabiner configuration.
