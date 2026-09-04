@@ -35,7 +35,7 @@ return {
           end)()
       return tostring(os.time()) .. "-" .. suffix
     end,
-    new_notes_location = "workspace_root",
+    new_notes_location = "notes_subdir",
     templates = {
       folder = "templates",
       date_format = "%Y-%m-%d",
