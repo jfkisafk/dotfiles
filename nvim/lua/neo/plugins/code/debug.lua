@@ -1,8 +1,11 @@
 return {
   {
     "mfussenegger/nvim-dap",
+    dependencies = { "mfussenegger/nvim-dap-python" },
     config = function()
       local dap = require("dap")
+
+      require("dap-python").setup(vim.fn.expand("~/.virtualenvs/debugpy/bin/python"))
 
       vim.fn.sign_define(
         "DapBreakpoint",

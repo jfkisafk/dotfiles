@@ -3,6 +3,7 @@ return {
   dependencies = {
     "nvim-neotest/neotest-jest",
     "nsidorenco/neotest-vstest",
+    "nvim-neotest/neotest-python",
     "nvim-neotest/nvim-nio",
   },
   config = function()
@@ -10,6 +11,7 @@ return {
       adapters = {
         require("neotest-jest")({ jestCommand = "yarn jest" }),
         require("neotest-vstest")({ dap_settings = { type = "coreclr", justMyCode = true } }),
+        require("neotest-python")({ runner = "pytest", dap = { justMyCode = false } }),
       },
     })
   end,

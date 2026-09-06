@@ -40,7 +40,7 @@ return {
         "lua_ls",
         "marksman",
         "prismals",
-        "pyright",
+        "basedpyright",
         "rust_analyzer",
         "sqlls",
         "svelte",
