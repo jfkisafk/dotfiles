@@ -61,8 +61,12 @@ return {
       vue = true,
     }
 
+    local function is_obsidian_note()
+      return vim.bo.filetype == "markdown" and vim.b.obsidian_buffer == true
+    end
+
     local function obsidian_status()
-      if vim.bo.filetype ~= "markdown" then
+      if not is_obsidian_note() then
         return ""
       end
       local ws = _G.Obsidian and _G.Obsidian.workspace
@@ -121,9 +125,7 @@ return {
         lualine_x = {
           {
             obsidian_status,
-            cond = function()
-              return vim.bo.filetype == "markdown"
-            end,
+            cond = is_obsidian_note,
             color = { fg = p.gold },
           },
           {
