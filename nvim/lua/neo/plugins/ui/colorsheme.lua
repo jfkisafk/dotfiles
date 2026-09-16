@@ -20,6 +20,10 @@ return {
         TelescopeResultsNormal = { fg = "subtle", bg = "none" },
         TelescopeSelection = { fg = "text", bg = "base" },
         TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
+        ClaudeCodeInlineDiffAdd = { fg = "text", bg = "pine", blend = 20, inherit = false },
+        ClaudeCodeInlineDiffDelete = { fg = "text", bg = "love", blend = 20, strikethrough = true, inherit = false },
+        ClaudeCodeInlineDiffAddSign = { fg = "pine" },
+        ClaudeCodeInlineDiffDeleteSign = { fg = "love" },
       },
     })
 
