@@ -1,4 +1,4 @@
-local HERDR_AGENT_NAME = "claude-ide-" .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. "-" .. vim.fn.getpid()
+local HERDR_AGENT_NAME = "claude-" .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. "-" .. vim.fn.getpid()
 local claude_pane_id = nil
 
 local function focus_claude_pane()
